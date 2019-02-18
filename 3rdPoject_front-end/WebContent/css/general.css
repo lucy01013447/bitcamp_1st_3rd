@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script');
+@import url('https://fonts.googleapis.com/css?family=Stylish');
+    
+
+*{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+hr{
+    margin: 0px;
+}
+
+/*부트스트랩 그리드 가운데정렬*/
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+/*가로폭 최대화*/
+.width-full{
+    width: 100%;
+}
+.height-full{
+    height: 100%;
+}
+.all-full{
+    width: 100%;
+    height: 100%;
+}
+
+
+/*오브젝트 피팅*/
+.fitting{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+/*테이블 그리드*/
+.col-table{
+    padding: 5px;
+    padding-bottom: 25px;
+    background-color: white;
+}
+/*센터 과정선택 테이블*/
+.center-lecture{
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    font-size: 14px;
+}
+/*테이블 헤드 행*/
+.center-lecture th{
+    height: 35px;
+    border-top: black 2px solid;
+    border-bottom: black 1px solid;
+}
+/*테이블 바디 행*/
+.center-lecture td{
+    height: 35px;
+    border-top: #DDDDDD 1px solid;
+}
+/*테이블 바디 짝수행*/
+.center-lecture tr:nth-child(2n){
+    background-color: #F9F9F9;
+}
+/*첫번째 열(순번)*/
+.center-lecture thead th:first-child{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/*마지막 열(교육자세히보기)*/
+.center-lecture thead th:nth-child(4){
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/*과정명 데이터 행*/
+.center-lecture tbody tr td:nth-child(2){
+    text-align: left;
+}
+/*교육기간 데이터 행*/
+.center-lecture tbody tr td:nth-child(3){
+    font-size: 13px;
+}
+/*자세히보기 데이터 행*/
+.center-lecture tbody tr td:nth-child(5){
+    padding-right: 15px;
+}
+/*과정선택 a태그 링크*/
+.center-lecture a{
+    text-decoration: none;
+    color: black;
+}
+.center-lecture a:hover{
+    color: #0040FF;
+}
+/*테이블 캡션>센터선택 버튼*/
+.center-lecture caption{
+    caption-side: top;
+    padding-top: 10px;
+    margin-bottom: -5px;
+    padding-left: 3px;
+}
+/*테이블 캡션>센터선택 버튼 비선택상태*/
+.center-choice-btn{
+    border: black 1px solid;
+    margin: -3px;
+    padding: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+    color: black;
+    cursor: pointer;
+}
+/*테이블 캡션>센터선택 버튼 선택상태*/
+.center-choice-btn-active{
+    border: black 1px solid;
+    background-color: #FE0002;
+    margin: -3px;
+    padding: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+    color: white;
+    text-shadow: 1.5px 1px black;
+    cursor: default;
+}
+
+
+
+
+
+/*페이지 중간 스티키 내비게이션*/
+#navbar-sticky {
+    background-color: #F2F2F2;
+    overflow: hidden;
+    border-top: 1px #044879 solid;
+    border-bottom: 1.5px #044879 solid;
+}
+#navbar-sticky img{
+    width: 35px;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+/*중앙 스티키 내비게이션 SelectBox*/
+.selectdiv {
+    position: relative;
+}
+.selectdiv:after {
+    content: '\f078';
+    font: normal normal normal 17px/1 FontAwesome;
+    color: #044879;
+    right: 11px;
+    top: 0px;
+    padding: 15px 0px 16px 8px;
+    position: absolute;
+    pointer-events: none;
+}
+/* IE11 hide native button (thanks Matt!) */
+select::-ms-expand {
+    display: none;
+}
+.selectdiv select {
+    background-color: #F2F2F2;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Add some styling */
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: 50px;
+    margin:-5px 0px;
+    padding: 0px 24px;
+    border: 1px solid #044879;
+    -ms-word-break: normal;
+    word-break: normal;
+}

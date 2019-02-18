@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>국가기간전략산업직종 | 비트캠프</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- [Bootstrap 4.1.0] -->
+    <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap-select.min.css">
+    
+	<!-- [Custom CSS] -->
+    <link rel="stylesheet" href="../../dist/css/general.css">
+    <link rel="stylesheet" href="../../dist/css/footer.css">
+    <link rel="stylesheet" href="../../dist/css/header.css">
+    
+    <link rel="stylesheet" href="../../dist/css/cssmenu.css">
+    <link rel="stylesheet" href="../../dist/css/fa-svg-with-js.css">
+    
+    <!-- [Font Awesome] -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- [favicon] -->
+    <link rel="shortcut icon" href="../../dist/favicon/favicon.ico">
+</head>
+
+
+<style>
+    /*로그인박스 모듈*/
+	#loginbox{
+		border: #D4D4D4 1px solid;
+		height: 480px;
+		background: #FBFBFB;
+	}
+	
+    /*로그인 박스모듈 내 잠금장치 이미지*/
+	#loginbox img{
+		width: 100px;
+		height: 100px;
+		margin-top: 40px;
+		margin-bottom: 50px;
+	}
+	
+    /*아이콘포함인풋박스*/
+	.inputWithIcon{
+		position: relative;
+	}
+    /*아이콘포함인풋박스 내부 input태그 속성*/
+	.inputWithIcon input[type=text], input[type=password]{
+		padding-left: 40px;
+	}
+    /*아이콘포함인풋박스 내부 input태그 포커싱*/
+	.inputWithIcon input[type=text]:focus, input[type=password]:focus{
+		border-color: dodgerBlue;
+		box-shadow: 0 0 8px 0 dodgerBlue;
+	}
+    /*아이콘포함인풋박스 내부 input태그 포커싱 상태일때 아이콘*/
+	.inputWithIcon input[type=text]:focus + i, input[type=password]:focus + i{
+		color:dodgerBlue;
+	}
+	/*아이콘포함인풋박스 placeholder*/
+	.inputWithIcon input::placeholder {
+	  color: #aaa;
+	}
+	/*아이콘포함인풋박스 아이콘 속성*/
+	.inputWithIcon i{
+		position: absolute;
+		left: 4px;
+		top: 0px;
+		font-size:20px;
+		padding: 9px 8px;
+		color: #aaa;
+	}
+	
+    /*이메일저장 체크박스 속성*/
+    .checkbox{
+        margin-left: 6px;
+        margin-top: -5px;
+        margin-bottom: 20px;
+    }
+    /*이메일저장 체크박스 내부 라벨 속성*/
+	.checkbox label{
+		font-size: 12px;
+        font-weight: 600;
+        padding-left: 7px;
+	}
+    /*Attribute(value)가 "해당값" 인것을 찾아 적용한다.*/
+    [value~="로그인"], [value~="회원가입"], [value~="아이디·비밀번호찾기"]{
+        font-weight: bold;
+    }
+</style>
+
+
+
+<body>
+	<br><br>
+	<div class="container">
+		<div class="row">
+			<div id="loginbox" class="col-md-4 col-centered">
+                <!-- 잠금장치 이미지 -->
+				<div class="row">
+					<div class="col-md-0 col-centered">
+						<img src="../../dist/imgs/lock-icon.png" alt="잠금장치 이미지">
+					</div>
+				</div>
+                <!-- 로그인 폼 -->
+				<form accept-charset="UTF-8" role="form">
+					<fieldset>
+                        <!-- 이메일 박스 -->
+						<div class="form-group inputWithIcon">
+							<input class="form-control" placeholder="이메일 주소" name="email" type="text">
+							<i class="fa fa-user"></i>
+						</div>
+                        <!-- 비밀번호 박스 -->
+						<div class="form-group inputWithIcon">
+							<input class="form-control" placeholder="비밀번호" name="password" type="password" value="">
+							<i class="fa fa-unlock-alt"></i>
+						</div>
+                        <!-- 체크박스 -->
+						<div class="checkbox">
+                            <input name="remember" type="checkbox" value="Remember Me"><label>이메일 저장</label>
+			    	    </div>
+                        <input class="btn btn-outline-info btn-block" type="submit" value="로그인">
+					</fieldset>
+				</form>
+                <div class="row" style="padding-top: 10px;">
+                    <!-- 회원가입 버튼 -->
+                    <div class="col-md-6" style="padding-right: 5px;">
+                        <input class="btn btn-outline-success btn-block" type="submit" value="회원가입">
+                    </div>
+                    <!-- 아이디 비밀번호 찾기 버튼 -->
+                    <div class="col-md-6" style="padding-left: 5px;">
+                        <input class="btn btn-outline-secondary btn-block" type="submit" value="아이디·비밀번호찾기">
+                    </div>
+                </div>
+			</div> 
+		</div>
+	</div>
+    
+    <br><br>
+
+
+	<!-- [Jquery 3.3.1] -->
+	<script src="../../plugins/jquery/dist/jquery.min.js"></script>
+	
+	<!-- [Bootstrap 4.1.0] -->
+	<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../plugins/bootstrap/js/bootstrap-select.min.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>국가기간전략산업직종 | 비트캠프</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- [Bootstrap 4.1.0] -->
+    <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap-select.min.css">
+    
+	<!-- [Custom CSS] -->
+    <link rel="stylesheet" href="../../dist/css/general.css">
+    <link rel="stylesheet" href="../../dist/css/footer.css">
+    <link rel="stylesheet" href="../../dist/css/header.css">
+    
+    <link rel="stylesheet" href="../../dist/css/cssmenu.css">
+    <link rel="stylesheet" href="../../dist/css/fa-svg-with-js.css">
+    
+    <!-- [Font Awesome] -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- [favicon] -->
+    <link rel="shortcut icon" href="../../dist/favicon/favicon.ico">
+</head>
+
+<style>  
+    /*상담신청 약식테이블*/
+    .newtech-board{
+        width: 100%;
+        font-size: .9rem;
+    }
+    .newtech-board tr th{
+        padding: 5px 10px 5px 10px;
+        border: 1px #DDDDDD solid;
+        background-color: #F5F5F5;
+        font-weight: 600;
+    }
+    .newtech-board tr td{
+        padding: 7px 10px 7px 10px;
+        border: 1px #DDDDDD solid;
+    }
+    .newtech-board tr:first-child td{
+        font-weight: bold;
+    }
+</style>
+
+<body>
+
+    <br><br>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-centered">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img class="all-full" src="../../dist/imgs/t_sub04_02.jpg">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12" style="border: #DBDBDB 1px solid;box-shadow: 1px 1px 1px 1px #DBDBDB">
+                        <table class="newtech-board mt-2 mb-4">
+                            <tr>
+                                <th>제목</th>
+                                <td colspan="5">Swing_간편 메모장 만들기</td>
+                            </tr>
+                            <tr>
+                                <th>작성자</th>
+                                <td>관리자</td>
+                                <th>작성일</th>
+                                <td>2017-06-13</td>
+                                <th>조회수</th>
+                                <td>428</td>
+                            </tr>
+                        </table>
+                        
+                        <div id="content mb-5">
+                            <p>스윙의 메뉴 작성법을 활용한 간편 메모장 만들기 이다.</p>
+
+<p>메뉴 작성법은 &nbsp;하위메뉴(JMenuItem)를 만들어서 메뉴(JMenu)에 추가 다시 해당 메뉴(JMeun)는 메뉴바(JMenuBar)에 추가&nbsp;</p>
+
+<p>다시 메뉴바는 &nbsp;프레임에 추가는 하는 순서이다.</p>
+
+<p>&nbsp;</p>
+
+<p>public class Ex09_notepad extends JFrame implements ActionListener{<br />
+&nbsp;&nbsp; &nbsp;JTextArea jta;<br />
+&nbsp;&nbsp; &nbsp;JScrollPane jsp;<br />
+&nbsp;&nbsp; &nbsp;JMenuItem jmi1, jmi2, jmi3, jmi4, jmi5, jmi6, jmi7, jmi8, jmi9;<br />
+&nbsp;&nbsp; &nbsp;JMenu jm1, jm2, jm3, jm4;<br />
+&nbsp;&nbsp; &nbsp;JMenuBar jmb ;<br />
+&nbsp;&nbsp; &nbsp;public Ex09_notepad() {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;setTitle(&quot;간단 메모장 ver 0.1&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jta = new JTextArea();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jsp = new JScrollPane(jta,&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jta.setLineWrap(true);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi1 = new JMenuItem(&quot;새파일&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi2 = new JMenuItem(&quot;열 &nbsp;기...&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi3 = new JMenuItem(&quot;저 &nbsp;장...&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi4 = new JMenuItem(&quot;종 &nbsp;료...&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi5 = new JMenuItem(&quot;돋움, 기울기,30&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi6 = new JMenuItem(&quot;궁서, 굵게, 40&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi7 = new JMenuItem(&quot;굴림, 기본, 50&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi8 = new JMenuItem(&quot;도움말&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi9 = new JMenuItem(&quot;메모장정보&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm1 = new JMenu(&quot;파 &nbsp;일&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm2 = new JMenu(&quot;서 &nbsp;식&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm3 = new JMenu(&quot;도움말&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm4 = new JMenu(&quot;글자서식&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmb = new JMenuBar();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// 하위메뉴를 메뉴에<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm1.add(jmi1);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm1.add(jmi2);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm1.add(jmi3);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm1.addSeparator();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm1.add(jmi4);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm4.add(jmi5);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm4.add(jmi6);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm4.add(jmi7);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm2.add(jm4);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm3.add(jmi8);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm3.addSeparator();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jm3.add(jmi9);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//메뉴를 메뉴바에 넣기&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmb.add(jm1);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmb.add(jm2);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmb.add(jm3);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// 메뉴바를 프레임 메뉴바에 붙이기<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;setJMenuBar(jmb);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;add(jsp);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Dimension ds = Toolkit.getDefaultToolkit().getScreenSize();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;setBounds(ds.width/2-300, ds.height/2-300, 600, 600);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;setVisible(true);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi1.addActionListener(this);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi2.addActionListener(this);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi3.addActionListener(this);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi4.addActionListener(this);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi5.addActionListener(this);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi6.addActionListener(this);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi7.addActionListener(this);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi8.addActionListener(this);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jmi9.addActionListener(this);<br />
+&nbsp;&nbsp; &nbsp;}<br />
+&nbsp;&nbsp; &nbsp;public static void main(String[] args) {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;new Ex09_notepad();<br />
+&nbsp;&nbsp; &nbsp;}<br />
+&nbsp;&nbsp; &nbsp;@Override<br />
+&nbsp;&nbsp; &nbsp;public void actionPerformed(ActionEvent e) {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;JMenuItem jmi = (JMenuItem)e.getSource();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if(jmi == jmi1){ // 새파일<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; int size = &nbsp;jta.getText().length();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; if(size==0){<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; jta.setText(&quot;&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; }else{<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; int res =JOptionPane.showConfirmDialog(getParent(), &quot;저장할까요?&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; if(res==0){<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; FileDialog fd = new FileDialog(this, &quot;저장하기&quot;, FileDialog.SAVE);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; fd.setVisible(true);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; // 저장기능(I/O) 후 새글<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;String path = fd.getDirectory()+fd.getFile();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;String msg = jta.getText().replace(&quot;
+&quot;, &quot;
+&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;byte[] b = msg.getBytes();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;FileOutputStream fos = null;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;try {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;fos = new FileOutputStream(path);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;fos.write(b);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;fos.flush();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jta.setText(&quot;&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} catch (FileNotFoundException e1) {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;e1.printStackTrace();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} catch (IOException e1) {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;e1.printStackTrace();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; }else if(res==1){<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; jta.setText(&quot;&quot;);&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; }<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; }<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}else if(jmi == jmi2){ // 열기<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; FileDialog fd = new FileDialog(this, &quot;불러오기&quot;, FileDialog.LOAD);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; fd.setVisible(true);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; // 파일 다이얼로그에서 선택한 파일을 읽어오기<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; // System.out.println(fd.getDirectory()+&quot;, &quot;+fd.getFile());<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; String path = fd.getDirectory()+fd.getFile();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; FileInputStream fis = null;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; File file = new File(path);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; int size = (int)(file.length());&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; byte[] b = new byte[size];<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; try {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;fis = new FileInputStream(file);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;fis.read(b);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jta.setText(&quot;&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jta.append(new String(b).trim());<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} catch (Exception e2) {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// TODO: handle exception<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}else if(jmi == jmi3){ // 저장<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; FileDialog fd = new FileDialog(this, &quot;저장하기&quot;, FileDialog.SAVE);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; fd.setVisible(true);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; // 저장기능(I/O)&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; String path = fd.getDirectory()+fd.getFile();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;String msg = jta.getText().replace(&quot;
+&quot;, &quot;
+&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;byte[] b = msg.getBytes();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;FileOutputStream fos = null;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;try {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;fos = new FileOutputStream(path);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;fos.write(b);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;fos.flush();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jta.setText(&quot;&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} catch (FileNotFoundException e1) {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;e1.printStackTrace();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} catch (IOException e1) {<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;e1.printStackTrace();<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}else if(jmi == jmi4){ // 종료<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;System.exit(0);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}else if(jmi == jmi5){ // 돋움,기울기, 30<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// 글꼴 (Font)<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Font font = new Font(&quot;돋움&quot;, Font.ITALIC, 30);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jta.setFont(font);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}else if(jmi == jmi6){ // 궁서,굵게, 40<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Font font = new Font(&quot;궁서&quot;, Font.BOLD, 40);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jta.setFont(font);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}else if(jmi == jmi7){ // 굴림,기본, 50<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Font font = new Font(&quot;굴림&quot;, Font.PLAIN, 50);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;jta.setFont(font);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}else if(jmi == jmi8){ // 도움말<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;JOptionPane.showMessageDialog(getParent(), &quot;도움말&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}else if(jmi == jmi9){ // 메모장정보<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;JOptionPane.showMessageDialog(getParent(), &quot;간단 메모장 ver0.1&quot;);<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br />
+&nbsp;&nbsp; &nbsp;}<br />
+}</p>
+
+<p>/////////////////////////////////////////////////////////////////////////////////////////////////////////////////</p>
+
+<p>&nbsp;</p>
+
+                        </div>
+                        
+                        <div class="col-md-1 col-centered mb-5">
+                            <button class="btn btn-primary ">목록</button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    <br><br><br><br>
+    
+    <!-- [Font Awesome] -->
+    <script src="../../plugins/font-awesome/fontawesome-all.min.js"></script>
+
+
+	<!-- [Jquery 3.3.1] -->
+	<script src="../../plugins/jquery/dist/jquery.min.js"></script>
+	
+	<!-- [Bootstrap 4.1.0] -->
+	<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../plugins/bootstrap/js/bootstrap-select.min.js"></script>
+
+</body>
+</html>
+

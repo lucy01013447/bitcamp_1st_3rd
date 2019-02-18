@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="member.userMapper">
+ 
+ 	<select id="selectUserList" resultType="UserVO">
+        SELECT *
+        FROM users
+    </select>
+    
+    <select id="selectUser" resultType="UserVO" parameterType="UserVO">
+    	SELECT * FROM users
+    	WHERE email = #{email}
+    	AND password = #{password}
+    </select>
+	
+	<insert id="insertUser" parameterType="UserVO">
+		INSERT INTO users
+		(email, password, name, nickname, email_hash)
+		VALUES
+		(#{email}, #{password}, #{name}, #{nickname}, #{email_hash})
+	</insert>
+	
+    <select id = "selectUserEmail" resultType = "UserVO">
+		SELECT user_id FROM users
+		WHERE email = #{email}
+	</select>
+	
+	<select id = "selectUserNickname" resultType = "UserVO">
+		SELECT user_id FROM users
+		WHERE nickname = #{nickname}
+	</select>
+	
+	<select id="selectEmailHash" parameterType="UserVO" resultType = "String">
+		SELECT user_id FROM users
+		WHERE email = #{email}
+		AND email_hash = #{email_hash}
+	</select>
+	
+	<update id="updateEmailCheck" parameterType="String">
+		UPDATE users
+		SET email_check = true
+		WHERE user_id = #{user_id}
+	</update>
+	
+	
+	
+</mapper>

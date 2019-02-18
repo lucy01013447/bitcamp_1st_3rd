@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="community.communityMapper">
+  
+  
+	<!-- 교육후기 게시판  -->
+  	<select id="selectList" resultType="CommunityVO" parameterType="Map">
+  		SELECT * FROM COMMUNITY ORDER BY SEQ DESC LIMIT #{begin}, #{numPerPage}
+  	</select>
+  	<select id="selectOne" resultType="CommunityVO" parameterType="int">
+  		SELECT * FROM COMMUNITY WHERE SEQ = #{seq}
+  	</select>
+  	<select id="totalRecord" resultType="int">
+		SELECT COUNT(*) TOTALRECORD FROM COMMUNITY  		
+  	</select>
+  	
+  	
+  	
+  	
+  	<!-- 자유게시판 -->
+  	<select id="selectFree" resultType="CommunityVO" parameterType="Map">
+  		SELECT F.*, (SELECT COUNT(*) FROM REPLY R  WHERE R.F_SEQ = F.SEQ) AS COUNTREPLY FROM FREE F ORDER BY F.SEQ DESC LIMIT #{begin}, #{numPerPage}
+  	</select>
+  	<select id="selectOneFree" resultType="CommunityVO" parameterType="int">
+  		SELECT * FROM FREE WHERE SEQ = #{seq}
+  	</select>
+  	<select id="totalRecordFree" resultType="int">
+  		SELECT COUNT(*) TOTALRECORD FROM FREE 
+  	</select>
+  	<select id="minSeq" resultType="int">
+  		SELECT MIN(SEQ) FROM FREE
+  	</select>
+  	<insert id="insertFree" parameterType="CommunityVO">
+  		INSERT INTO FREE (TITLE, WRITER, PWD, DATE, CONTENT, UPLOADFILEPATH, UPLOADFILENAME ) 
+  		VALUES (#{title}, #{writer}, #{pwd}, CURDATE(), #{content}, #{uploadfilepath}, #{uploadfilename})
+  	</insert>
+  	<update id="updateFree" parameterType="CommunityVO">
+  		UPDATE FREE SET TITLE = #{title},
+  						CONTENT = #{content} WHERE SEQ = #{seq}
+  	</update>
+  	<delete id="deleteFree" parameterType="int">
+  		DELETE FROM FREE WHERE SEQ = #{seq}
+  	</delete>
+  	
+  	
+  	
+  	
+  	<!-- 프로젝트 게시판 -->
+  	<select id="selectProject" resultType="CommunityProjectVO" parameterType="Map">
+  		SELECT * FROM COMMUNITYPROJECT ORDER BY SEQ DESC LIMIT #{begin}, #{numPerPage}
+  	</select>
+  	<select id="selectOnePro" resultType="CommunityProjectVO">
+  		SELECT * FROM COMMUNITYPROJECT WHERE SEQ = #{seq}
+  	</select>
+  	<select id="totalRecordPro" parameterType="String" resultType="int">
+		SELECT COUNT(*) TOTALRECORD FROM COMMUNITYPROJECT 		
+  	</select>
+  	<select id="selectProMain" resultType="CommunityProjectVO">
+  		SELECT * FROM COMMUNITYPROJECT ORDER BY SEQ DESC LIMIT 0, 6
+  	</select>
+  	
+  	
+  	
+  	<!-- 조회수 증가 -->
+  	<update id="addHitFree" parameterType="int">
+  		UPDATE FREE SET HIT = IFNULL(HIT,0) + 1 WHERE SEQ = #{seq}
+  	</update>
+  	<update id="addHitLec" parameterType="int">
+  		UPDATE COMMUNITY SET HIT = IFNULL(HIT,0) + 1 WHERE SEQ = #{seq}
+  	</update>
+  	<update id="addHitNotice" parameterType="int">
+  		UPDATE NOTICE SET HIT = IFNULL(HIT,0) + 1 WHERE SEQ = #{seq}
+  	</update>
+  	
+  	
+  	
+  	<!-- 댓글 : 자유게시판 및 공지사항  -->
+  	<select id="countReply" resultType="int">
+  		SELECT COUNT(*) FROM REPLY
+  		<if test = "type == 1 ">
+  			WHERE F_SEQ = #{b_seq}
+  		</if>
+  		<if test = "type == 2 ">
+  			WHERE N_SEQ = #{b_seq}
+  		</if>
+  	</select>
+  	<select id="selectReply" parameterType="int" resultType="ReplyVO">
+  		<if test = "type == 1 ">
+  			SELECT R_SEQ, F_SEQ, WRITER, CONTENT, DATE_FORMAT(DATE, "%Y-%c-%d %h:%i:%s") AS DATE, PWD 
+  				FROM REPLY WHERE F_SEQ = #{b_seq} ORDER BY R_SEQ ASC
+  		</if>
+  		<if test = "type == 2 ">
+  			SELECT R_SEQ, N_SEQ, WRITER, CONTENT, DATE_FORMAT(DATE, "%Y-%c-%d %h:%i:%s") AS DATE, PWD 
+  				FROM REPLY WHERE N_SEQ = #{b_seq} ORDER BY R_SEQ ASC
+  		</if>
+   	</select>
+  	<insert id="insertReply" parameterType="ReplyVO">
+  		<if test = "type == 1 ">
+  			INSERT INTO REPLY (F_SEQ, WRITER, PWD, CONTENT, DATE) 
+  			VALUES(#{f_seq}, #{writer}, #{pwd}, #{content}, now())
+  		</if>
+  		<if test = "type == 2 ">
+  			INSERT INTO REPLY (N_SEQ, WRITER, PWD,CONTENT, DATE) 
+  			VALUES(#{n_seq}, #{writer}, #{pwd}, #{content}, now())
+  		</if>
+  	</insert>
+  	<update id="updateReply" parameterType="ReplyVO">
+  		UPDATE REPLY SET
+  				CONTENT = #{content}
+  			WHERE R_SEQ = #{r_seq}
+  	</update>
+  	<delete id="deleteReply" parameterType="int">
+  		DELETE FROM REPLY WHERE R_SEQ = #{r_seq}
+  	</delete>
+  	
+  	
+  	
+  	
+  	<!-- 공지사항 -->
+  	<select id="selectNotice" resultType="CommunityVO" parameterType="Map">
+  		SELECT N.*, (SELECT COUNT(*) FROM REPLY R  WHERE R.N_SEQ = N.SEQ) AS COUNTREPLY FROM NOTICE N
+  		ORDER BY TYPE, SEQ DESC LIMIT #{begin}, #{numPerPage}
+  	</select>
+  	<select id="selectOneNotice" resultType="CommunityVO" parameterType="int">
+  		SELECT * FROM NOTICE WHERE SEQ = #{seq}
+  	</select>
+  	<select id="totalRecordNotice" resultType="int">
+  		SELECT COUNT(*) TOTALRECORD FROM NOTICE 
+  	</select>
+  	<select id="minSeqNotice" resultType="int">
+  		SELECT MIN(SEQ) FROM NOTICE
+  	</select>
+  	<insert id="insertNotice" parameterType="CommunityVO">
+  		INSERT INTO NOTICE (TITLE, PWD, WRITER, DATE, HIT, CONTENT, TYPE)
+  		VALUES (#{title}, #{pwd}, #{writer}, CURDATE(), 0,#{content}, #{type})
+  	</insert>
+  	<update id="updateNotice" parameterType="CommunityVO">
+  		UPDATE NOTICE SET TITLE = #{title},
+  						CONTENT = #{content},
+  						TYPE = #{type} WHERE SEQ = #{seq}
+  	</update>
+  	<delete id="deleteNotice" parameterType="int">
+  		DELETE FROM NOTICE WHERE SEQ = #{seq}
+  	</delete>
+  	<select id="selectNoticeMain" resultType="CommunityVO">
+  		SELECT * FROM NOTICE ORDER BY SEQ DESC LIMIT 0, 8
+  	</select>
+  	
+  </mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+    <configuration>
+ 		<typeAliases>
+            <typeAlias type="com.cafe24.bitcamp.member.domain.UserVO" alias="UserVO"/>
+            <typeAlias type="com.cafe24.bitcamp.lecture.domain.LectureVO" alias="LectureVO"/>
+            <typeAlias type="com.cafe24.bitcamp.lecture.domain.ApplicantVO" alias="ApplicantVO"/>
+            <typeAlias type="com.cafe24.bitcamp.lecture.domain.ConsultVO" alias="ConsultVO"/>
+            
+            <typeAlias type="com.cafe24.bitcamp.lecture.domain.PageReqVO" alias="PageReqVO"/>
+            <typeAlias type="com.cafe24.bitcamp.community.domain.CommunityVO" alias="CommunityVO"/>
+            <typeAlias type="com.cafe24.bitcamp.community.domain.CommunityProjectVO" alias="CommunityProjectVO"/>
+
+            <typeAlias type="com.cafe24.bitcamp.notice.domain.NoticeBoardVO" alias="NoticeBoardVO"/>
+            <typeAlias type="com.cafe24.bitcamp.notice.domain.NewTechBoardVO" alias="NewTechBoardVO"/>
+
+            <typeAlias type="com.cafe24.bitcamp.community.domain.ReplyVO" alias="ReplyVO"/>
+            
+        </typeAliases>
+    </configuration>

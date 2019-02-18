@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>국가기간전략산업직종 | 비트캠프</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- [Bootstrap 4.1.0] -->
+    <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap-select.min.css">
+    
+	<!-- [Custom CSS] -->
+    <link rel="stylesheet" href="../../dist/css/general.css">
+    <link rel="stylesheet" href="../../dist/css/footer.css">
+    <link rel="stylesheet" href="../../dist/css/header.css">
+    
+    <link rel="stylesheet" href="../../dist/css/cssmenu.css">
+    <link rel="stylesheet" href="../../dist/css/fa-svg-with-js.css">
+    
+    <!-- [Font Awesome] -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- [favicon] -->
+    <link rel="shortcut icon" href="../../dist/favicon/favicon.ico">
+</head>
+
+<style>
+    /*상담신청 약식테이블*/
+    .consult-apply{
+        width: 100%;
+        font-size: .9rem;
+    }
+    .consult-apply tr th{
+        width: 100px;
+        text-align: right;
+        padding-right: 5px;
+        font-weight: 600;
+    }
+    .consult-apply tr td{
+        padding: 7px 5px 7px 10px;
+    }
+    
+    #down-apply{
+        padding: 15px 0 25px 150px;
+    }
+    #down-apply span:nth-child(2){
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    
+    
+
+</style>
+
+<body>
+
+    <br><br>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-centered">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img class="all-full" src="../../dist/imgs/t_sub07_01.jpg">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12" style="border: #DBDBDB 1px solid;box-shadow: 1px 1px 1px 1px #DBDBDB">
+                        <div class="form-group">
+                            <table class="consult-apply">
+                                <tr>
+                                    <th>제목</th>
+                                    <td colspan="3"><input type="text" class="form-control" id="subject"></td>
+                                </tr>
+                                <tr>
+                                    <th>이름</th>
+                                    <td colspan="3"><input type="text" class="form-control" id="name"></td>
+                                </tr>
+                                <tr>
+                                    <th>성별</th>
+                                    <td>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="male" name="gender" class="custom-control-input" checked>
+                                            <label class="custom-control-label" for="male">남성</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="female" name="gender" class="custom-control-input">
+                                            <label class="custom-control-label" for="female">여성</label>
+                                        </div>
+                                    </td>
+                                    <th>이메일</th>
+                                    <td><input type="text" class="form-control" id="name"></td>
+                                </tr>
+                                <tr>
+                                    <th>구분</th>
+                                    <td>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="cost" name="needs" class="custom-control-input" checked>
+                                            <label class="custom-control-label" for="cost">수강료문의</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="visit" name="needs" class="custom-control-input">
+                                            <label class="custom-control-label" for="visit">방문상담</label>
+                                        </div>
+                                    </td>
+                                    <th>휴대폰</th>
+                                    <td><input type="text" class="form-control" id="name"></td>
+                                </tr>
+                                <tr>
+                                    <th>수강 목적</th>
+                                    <td colspan="3">
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="job" name="purpose" class="custom-control-input" checked>
+                                            <label class="custom-control-label" for="job">취업희망</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="transfer" name="purpose" class="custom-control-input">
+                                            <label class="custom-control-label" for="transfer">이직희망</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="worker" name="purpose" class="custom-control-input">
+                                            <label class="custom-control-label" for="worker">재직자</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="vacation" name="purpose" class="custom-control-input">
+                                            <label class="custom-control-label" for="vacation">방학특강</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>캠퍼스 선택</th>
+                                    <td colspan="3">
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="sch" name="campus" class="custom-control-input" checked>
+                                            <label class="custom-control-label" for="sch">서초센터(본점)</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="sc" name="campus" class="custom-control-input">
+                                            <label class="custom-control-label" for="sc">신촌센터</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="gn" name="campus" class="custom-control-input">
+                                            <label class="custom-control-label" for="gn">강남센터</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="cr" name="campus" class="custom-control-input">
+                                            <label class="custom-control-label" for="cr">종로센터</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <hr>
+                            <div id="down-apply">
+                                <span><button class="btn btn-info btn-lg">고급과정지원서 다운받기</button></span>
+                                <span>(bit@bitacademy.net로 메일접수 받습니다.)</span>
+                            </div>
+                            
+                            <div>
+                                <textarea name="comment" id="comment" class="ckeditor"></textarea>
+                            </div>
+                            
+                            <br><br>
+                            <button class="btn btn-success btn-lg" style="position: sticky; left: 100%;">저장</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <br><br><br><br>
+    
+    <script>
+        CKEDITOR.replace( 'content', {
+            //filebrowserUploadUrl: 'upload_ck.php'
+        });
+        CKEDITOR.config.toolbar = [
+            ['Styles','Format','Font','FontSize'],
+            ['Bold','Italic','Underline','StrikeThrough','-','Undo','Redo','-','Cut','Copy','Paste', 'Replace','-','Outdent','Indent','-','Print'],
+            ['NumberedList','BulletedList','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+            ['Image','Table','-','Link', 'Smiley','TextColor','BGColor','Source']
+        ] ;
+    </script>
+
+    <script src="../../plugins/ckeditor/ckeditor.js"></script>
+
+
+	<!-- [Jquery 3.3.1] -->
+	<script src="../../plugins/jquery/dist/jquery.min.js"></script>
+	
+	<!-- [Bootstrap 4.1.0] -->
+	<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../plugins/bootstrap/js/bootstrap-select.min.js"></script>
+
+</body>
+</html>
+

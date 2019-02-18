@@ -1,0 +1,119 @@
+/*최상단 프라이빗 내비게이션*/
+.navbar-expand-sm{
+    background-color: #FAFAFA;
+    border: #EAEAEA 1px solid;
+    height: 40px;
+}
+.navbar-expand-sm .navbar-brand{ 
+    /*font-family: 'Black Han Sans', sans-serif;*/
+    font-family: 'Do Hyeon', sans-serif;
+    color: #0062AA;    
+}
+
+/*내비게이션 통합*/
+.nav-link{
+    color: black;
+    font-size: 0.7rem;
+}
+
+/*제작자 사인*/
+#sign{
+    padding-top: 30px;
+    padding-left: 0px;
+}
+#sign p{
+    text-align: center;
+    margin: -5px;
+    font-size: 15px;
+    font-family: 'Stylish', sans-serif;
+}
+
+
+
+/*메인로고*/
+#main-logo{
+    padding-top: 15px;
+    margin-left: 40px;
+}
+/*좌측 서브로고*/
+#sub-logo{
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+/*검색바*/
+#search-bar{
+    margin-top: 15px;
+    padding: 10px;
+    margin-right: 50px;
+    margin-bottom: 15px;
+}
+/*검색바 검색폼*/
+#search-bar form{
+    border: #0062AA 2px solid;
+    width: 450px;
+    height: 40px;
+}
+/*검색바 검색이미지 버튼*/
+#search-bar img{
+    float: right;
+    margin-top: -3px;   
+}
+/*검색바 내부 텍스트*/
+#search-bar input{
+    margin: auto;
+    width: 400px;
+    margin-top: 5px;
+    margin-left: 5px;
+    border: none;
+}
+
+/*검색바 하단 인기검색어*/
+#popular-keyword-layer{
+    font-size: 0.7rem;
+    margin-top: 6px;
+}
+#popular-keyword-layer img{
+    float: left;
+    margin-top: 0px;
+    padding-right: 5px;
+}
+#popular-keyword-link a{
+    color: #898788;
+    margin: 2px;
+}
+
+/*메인 내비게이션*/
+.navbar-expand-md{
+    border: #EAEAEA 1px solid;
+    height: 50px;
+    font-size: 0.7rem;
+}
+.navbar-expand-md a{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.navbar-expand-md > a:hover{
+    color: #0056B3;
+}
+.dropdown-menu{
+   width: 100%;
+}
+/*내비게이션아이템*/
+.dropdown-item{
+    width: 100%;
+    text-align: center;
+}
+.dropdown-item:hover{
+    background-color: #0056B3;
+    color: white;
+}
+/*내비게이션 호버상태 드랍다운*/
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+/*드랍다운메뉴 화살표아이콘 제거*/
+.dropdown-toggle::after {
+    display:none
+}

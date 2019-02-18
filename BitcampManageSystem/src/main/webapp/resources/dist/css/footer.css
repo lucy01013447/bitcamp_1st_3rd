@@ -1,0 +1,28 @@
+/*하단 정보페이지 링크바*/
+#footer-linkbar{
+    background-color: #E8E8E8;
+    height: 40px;
+    text-align: center;
+    line-height: 2.5;
+}
+#footer-linkbar a{
+    text-decoration: none;
+    color: black;
+}
+#footer-linkbar a:hover{
+    color: #0040FF;
+}
+
+/*하단 회사정보*/
+#footer-info{
+    margin: 15px;
+}
+#footer-info p{
+    margin: 2px;
+    font-size: 14px;
+    text-align: left;
+}
+#footer-info img{
+    padding-top: 11px;
+    padding-left: 60px;
+}

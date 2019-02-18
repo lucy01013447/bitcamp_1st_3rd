@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="lecture.lectureMapper">
+	<select id="selectLectureList" parameterType="PageReqVO" resultType="LectureVO">
+		SELECT lec_id, center, thumbnail_img_path, thumbnail_explain, title, start_date, end_date, recruit, phone_num, inner_img_path
+		FROM lectures
+		<if test="center != 'all'">
+			WHERE center = #{center}
+			AND type = #{type}
+		</if>
+		ORDER BY lec_id ASC
+		LIMIT #{begin}, #{numPerPage}
+	</select>
+	
+	<select id="selectAllList" resultType="LectureVO">
+		SELECT lec_id, center, type, title
+		FROM lectures
+	</select>
+	
+	<select id="totalRecord" parameterType="PageReqVO" resultType="int">
+		SELECT COUNT(*) TOTALRECORD
+		FROM lectures
+		<if test="center != 'all'">
+			WHERE center = #{center}
+			AND type = #{type}
+		</if>
+  	</select>
+	
+	<select id="selectLectureOne" parameterType="int" resultType="LectureVO">
+		SELECT *
+		FROM lectures
+		WHERE lec_id = #{lec_id}
+	</select>
+	
+	<select id="insertApplicant" parameterType="ApplicantVO">
+		INSERT INTO applicants
+		(lec_id, name, birth, email, phone_num, gender, address, comment, password)
+		VALUES
+		(#{lec_id}, #{name}, #{birth}, #{email}, #{phone_num}, #{gender}, #{address}, #{comment}, #{password})
+	</select>
+	
+	
+	<select id="insertConsultation" parameterType="ConsultVO">
+		INSERT INTO consultation
+		(subject, name, email, phone_num, gender, needs, purpose, campus, application, comment, apply_date)
+		VALUES
+		(#{subject}, #{name}, #{email}, #{phone_num}, #{gender}, #{needs}, #{purpose}, #{campus}, #{application}, #{comment}, NOW());
+	</select>
+	
+	
+	<select id="selectListMain" parameterType="int" resultType="LectureVO">
+		SELECT lec_id, thumbnail_img_path, start_date, end_date, center, phone_num
+		FROM lectures
+		WHERE type = #{type}
+		ORDER BY start_date ASC
+		LIMIT 0, 4;
+	</select>
+	
+</mapper>
+
+

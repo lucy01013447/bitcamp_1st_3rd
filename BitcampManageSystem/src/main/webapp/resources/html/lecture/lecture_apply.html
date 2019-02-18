@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>국가기간전략산업직종 | 비트캠프</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- [Bootstrap 4.1.0] -->
+    <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap-select.min.css">
+    
+	<!-- [Custom CSS] -->
+    <link rel="stylesheet" href="../../dist/css/general.css">
+    <link rel="stylesheet" href="../../dist/css/footer.css">
+    <link rel="stylesheet" href="../../dist/css/header.css">
+    
+    <link rel="stylesheet" href="../../dist/css/cssmenu.css">
+    <link rel="stylesheet" href="../../dist/css/fa-svg-with-js.css">
+    
+    <!-- [Font Awesome] -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- [favicon] -->
+    <link rel="shortcut icon" href="../../dist/favicon/favicon.ico">
+</head>
+
+<style>
+    /*교육정보테이블*/
+    .lec-apply{
+        width: 100%;
+        font-size: .9rem;
+        border-top: 2px #DDDDDD solid;
+        border-bottom: 2px #DDDDDD solid;
+    }
+    .lec-apply tr th{
+        width: 140px;
+        text-align: left;
+        background-color: #F5F5F5;
+        border-bottom: 1px #DDDDDD solid;
+        padding-left: 10px;
+        font-weight: 600;
+    }
+    .lec-apply tr td{
+        text-align: left;
+        border-bottom: 1px #DDDDDD solid;
+        padding: 7px 5px 7px 10px;
+    }
+    .lec-apply caption{
+        caption-side: top;
+        text-align: center;
+        font-weight: bold;
+        color: black;
+        font-size: 1.4rem;
+        padding-bottom: 20px;
+    }
+    
+
+</style>
+
+<body>
+
+    <br><br>
+    
+    <div class="container">
+        <div class="row">
+            
+            
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <table class="lec-apply">
+                                <tr>
+                                    <th>지원과정</th>
+                                    <td><b>UI/UX기반의 자바개발자 양성과정 - 18년 7월</b></td>
+                                </tr>
+                                <tr>
+                                    <th>캠퍼스</th>
+                                    <td>서초본점</td>
+                                </tr>
+                                <tr>
+                                    <th>이름</th>
+                                    <td><input type="text" class="form-control" id="user" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <th>생년월일</th>
+                                    <td><input type="date" class="form-control" id="date" style="width: 200px;"></td>
+                                </tr>
+                                <tr>
+                                    <th>이메일</th>
+                                    <td><input type="email" class="form-control" id="email" style="width: 350px;"></td>
+                                </tr>
+                                <tr>
+                                    <th>연락처</th>
+                                    <td><input type="number" class="form-control" id="num" style="width: 350px;"></td>
+                                </tr>
+                                <tr>
+                                    <th>성별</th>
+                                    <td>
+                                        <div class="form-check-inline">
+                                            <input type="radio" class="form-check-input" name="gender" value="male">남성
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <input type="radio" class="form-check-input" name="gender" value="female">여성
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>주소</th>
+                                    <td><input type="text" class="form-control" id="addr" style="width: 450px;"></td>
+                                </tr>
+                                <caption>수강신청하기</caption>
+                            </table>
+                            <br>
+                            <table class="lec-apply">
+                                <tr>
+                                    <th>지원 동기 및 취업에대한 의지</th>
+                                    <td><textarea name="content" id="comment" class="ckeditor"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <th>비밀번호</th>
+                                    <td><input type="password" class="form-control" id="pwd" style="width: 100px;"></td>
+                                </tr>
+                            </table>
+                            
+                            <br>
+                            <button class="btn btn-primary">목록</button>
+                            <button class="btn btn-info btn-lg" style="position: sticky; left: 100%;">신청하기</button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    <br><br><br><br>
+
+    <script>
+        CKEDITOR.replace( 'content', {
+            //filebrowserUploadUrl: 'upload_ck.php'
+        });
+        CKEDITOR.config.toolbar = [
+            ['Styles','Format','Font','FontSize'],
+            ['Bold','Italic','Underline','StrikeThrough','-','Undo','Redo','-','Cut','Copy','Paste', 'Replace','-','Outdent','Indent','-','Print'],
+            ['NumberedList','BulletedList','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+            ['Image','Table','-','Link', 'Smiley','TextColor','BGColor','Source']
+        ] ;
+    </script>
+
+    <script src="../../plugins/ckeditor/ckeditor.js"></script>
+
+
+	<!-- [Jquery 3.3.1] -->
+	<script src="../../plugins/jquery/dist/jquery.min.js"></script>
+	
+	<!-- [Bootstrap 4.1.0] -->
+	<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../plugins/bootstrap/js/bootstrap-select.min.js"></script>
+
+</body>
+</html>
+

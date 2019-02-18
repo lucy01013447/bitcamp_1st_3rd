@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>국가기간전략산업직종 | 비트캠프</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- [Bootstrap 4.1.0] -->
+    <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap-select.min.css">
+    
+	<!-- [Custom CSS] -->
+    <link rel="stylesheet" href="../../dist/css/general.css">
+    <link rel="stylesheet" href="../../dist/css/footer.css">
+    <link rel="stylesheet" href="../../dist/css/header.css">
+    
+    <link rel="stylesheet" href="../../dist/css/cssmenu.css">
+    <link rel="stylesheet" href="../../dist/css/fa-svg-with-js.css">
+    
+    <!-- [Font Awesome] -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- [favicon] -->
+    <link rel="shortcut icon" href="../../dist/favicon/favicon.ico">
+    
+</head>
+
+<style>
+    /*회원가입박스 모듈*/
+	#registerbox{
+		border: #D4D4D4 1px solid;
+		background: #FBFBFB;
+	}
+    /*박스모듈 내 잠금장치 이미지*/
+	.box-logo{
+		width: 100px;
+		height: 100px;
+		margin-top: 40px;
+		margin-bottom: 50px;
+	}
+	
+    /*아이콘포함인풋박스*/
+	.inputWithIcon{
+		position: relative;
+	}
+    /*아이콘포함인풋박스 내부 input태그 속성*/
+	.inputWithIcon input[type=text], input[type=password]{
+		padding-left: 40px;
+	}
+    /*아이콘포함인풋박스 내부 input태그 포커싱*/
+	.inputWithIcon input[type=text]:focus, input[type=password]:focus{
+		border-color: dodgerBlue;
+		box-shadow: 0 0 8px 0 dodgerBlue;
+	}
+    /*아이콘포함인풋박스 내부 input태그 포커싱 상태일때 아이콘*/
+	.inputWithIcon input[type=text]:focus + i, input[type=password]:focus + i{
+		color:dodgerBlue;
+	}
+	/*아이콘포함인풋박스 placeholder*/
+	.inputWithIcon input::placeholder {
+	  color: #aaa;
+	}
+	/*아이콘포함인풋박스 아이콘 속성*/
+	.inputWithIcon i{
+		position: absolute;
+		top: 0px;
+		font-size: 20px;
+		padding: 9px 8px;
+		color: #aaa;
+	}
+    /*아이콘포함인풋박스 내 아이콘 백그라운드*/
+    .inputWithIcon.inputIconBg i{
+        background-color: #aaa;
+        color: #fff;
+        padding: 9px 10px;
+        border-radius: 5px 0 0 5px;
+    }
+    /*아이콘포함인풋박스 내 아이콘 백그라운드 포커싱*/
+    .inputWithIcon.inputIconBg input[type=text]:focus + i, input[type=password]:focus + i{
+        color: #fff;
+        background-color: dodgerblue;
+    }
+    
+    /*reCAPTCHA*/
+    .recaptcha-wrapper {
+        min-height: 108px;
+        padding-top: 10px;
+        width: 310px;
+        margin: auto;
+    }
+
+    /*구글버튼*/
+    .btn.btn-google-plus{
+        font-size: 17px;width:100%;color: #fff;margin-bottom: 1em;
+        background-color: #be3b26; border-color: #be3b26; -webkit-box-shadow: 0 3px 0 #842719; box-shadow: 0 3px 0 #842719;
+    }
+    /*페이스북버튼*/
+    .btn.btn-facebook{
+        font-size: 17px;width:100%;color: #fff;margin-bottom: 1em;
+        background-color: #2479b6; border-color: #2479b6; -webkit-box-shadow: 0 3px 0 #1c6394; box-shadow: 0 3px 0 #1c6394;
+    }
+</style>
+
+<body>
+
+	<br><br>
+	<div class="container">
+		<div class="row">
+			<div id="registerbox" class="col-md-6 col-centered"  style="margin-right: 10px;">
+                <!-- 잠금장치 이미지 -->
+				<div class="row">
+					<div class="col-md-0 col-centered">
+						<img class="box-logo" src="../../dist/imgs/register-icon.png" alt="잠금장치 이미지">
+					</div>
+				</div>
+                
+                
+                <!-- 로그인 폼 -->
+				<form accept-charset="UTF-8" role="form">
+					<fieldset>
+                        
+                        <!-- 이메일 박스 -->
+						<div class="form-group inputWithIcon inputIconBg">
+							<input class="form-control" placeholder="이메일 주소" name="email" type="text">
+							<i class="fa fa-envelope" style="font-size: 18px; padding: 10px 7px 10px 7px;"></i>
+						</div>
+                        
+                        <!-- 비밀번호 박스 -->
+						<div class="form-group inputWithIcon inputIconBg">
+							<input class="form-control" placeholder="비밀번호" name="password" type="password" value="">
+							<i class="fa fa-lock"></i>
+						</div>
+                        
+                        <div class="form-group inputWithIcon inputIconBg">
+							<input class="form-control" placeholder="비밀번호 확인" name="password" type="password" value="">
+							<i class="fa fa-unlock-alt"></i>
+						</div>
+                        
+                        <div class="form-group inputWithIcon inputIconBg">
+							<input class="form-control" placeholder="이름" name="email" type="text">
+							<i class="fa fa-user"></i>
+						</div>
+                        
+                        <div class="form-group inputWithIcon inputIconBg">
+							<input class="form-control" placeholder="닉네임" name="email" type="text">
+							<i class="fa fa-id-badge"></i>
+						</div>
+					</fieldset>
+                    
+                    <p>회원가입을 위해 정보를 입력해주시기 바랍니다.</p>
+                    
+                    <div class="recaptcha-wrapper">
+                        <div class="g-recaptcha" data-sitekey="6LeHSF0UAAAAAFHXoZs9jp8vonF7EaRFbFaELz3m"></div>
+                    </div>
+                    
+                    <input class="btn btn-primary btn-block" style="height: 50px;margin-bottom: 20px;" type="submit" value="가입하기">
+				</form>
+
+			</div> 
+            
+            
+            <div id="registerbox" class="col-md-4 col-centered" style="height: 330px; margin-left: 30px;">
+                <!-- 잠금장치 이미지 -->
+				<div class="row">
+					<div class="col-md-0 col-centered">
+						<img class="box-logo"  src="../../dist/imgs/social-icon.png" alt="잠금장치 이미지">
+					</div>
+				</div>
+                
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="btn btn-google-plus"><i class="fa fa-google-plus"></i>&nbsp;&nbsp;Google+ 로 가입하기</a>	
+                    </div>
+                    
+                    <div class="col">
+                        <a href="#" class="btn btn-facebook"><i class="fa fa-facebook"></i>&nbsp;&nbsp;Facebook 으로 가입하기</a>	
+                    </div>
+                </div>
+			</div> 
+		</div>
+	</div>
+    
+    <br><br>
+
+	<!-- [Jquery 3.3.1] -->
+	<script src="../../plugins/jquery/dist/jquery.min.js"></script>
+	
+	<!-- [Bootstrap 4.1.0] -->
+	<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../../plugins/bootstrap/js/bootstrap-select.min.js"></script>
+    
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    
+    
+</body>
+</html>
+

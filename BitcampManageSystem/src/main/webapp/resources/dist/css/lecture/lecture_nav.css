@@ -1,0 +1,115 @@
+/*사이드내비게이션*/
+nav.vertical {
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
+    text-align: center;
+    margin-bottom: 30px;
+}    
+/*사이드내비게이션 내부 모든 ul태그*/
+nav.vertical ul {
+    margin: 0;
+    padding: 0;
+}
+nav.vertical > ul > li {
+    display: block;
+}
+/*사이드내비게이션 메뉴(지점)/모든지점(a태그)*/
+nav.vertical > ul > li > label,
+nav.vertical > ul > li > a {
+    background-color: rgb(72, 72, 64);
+    background-image: -webkit-linear-gradient(0deg, rgb(40, 40, 40), rgb(75, 75, 70), rgb(95, 95, 95));
+    background-image: -moz-linear-gradient(0deg, rgb(40, 40, 40), rgb(75, 75, 70), rgb(95, 95, 95));
+    background-image: -o-linear-gradient(0deg, rgb(40, 40, 40), rgb(75, 75, 70), rgb(95, 95, 95));
+    background-image: linear-gradient(0deg, rgb(40, 40, 40), rgb(75, 75, 70), rgb(95, 95, 95));
+    box-shadow: inset 0 15px 5px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.1);
+    color: white;
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 55px;
+    line-height: 50px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.1);
+    text-transform: uppercase;
+    border: #2D2D2D 1.5px solid;
+    margin: -0.5px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+nav.vertical > ul > li > label:hover,
+nav.vertical > ul > li > a:hover {
+    cursor: pointer;
+}
+/*사이드내비게이션 메뉴(지점)/모든지점(a태그)의 radio속성 버튼모양 생략 */
+nav.vertical > ul > li > label + input {
+    display: none;
+}
+/*사이드내비게이션 메뉴(지점)-서브메뉴*/
+.vertical-sub {
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
+    display: none;
+    margin: -0.5px;
+}      
+.vertical-sub > ul > li {
+    display: block;
+}
+/*서브메뉴*/
+.vertical-sub > ul > li > label,
+.vertical-sub > ul > li > a {
+    background-color: rgb(157, 34, 60);
+    background-image: -webkit-linear-gradient(135deg, rgb(114, 51, 98), rgb(157, 34, 60));
+    background-image: -moz-linear-gradient(135deg, rgb(114, 51, 98), rgb(157, 34, 60));
+    background-image: -o-linear-gradient(135deg, rgb(114, 51, 98), rgb(157, 34, 60));
+    background-image: linear-gradient(135deg, rgb(114, 51, 98), rgb(157, 34, 60));
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.1), 0 1px 1px rgba(0,0,0,.1);
+    color: white;
+    display: block;
+    font-size: 0.9rem;
+    height: 40px;
+    line-height: 37px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.1);
+    text-transform: uppercase;
+    text-align: left;
+    padding-left: 20px;
+    margin-bottom: 0px;
+}
+.vertical-sub > ul > li > label:hover,
+.vertical-sub > ul > li > a:hover {
+    background-color: rgb(127, 34, 60);
+    background-image: -webkit-linear-gradient(135deg, rgb(14, 51, 98), rgb(157, 34, 60));
+    background-image: -moz-linear-gradient(135deg, rgb(14, 51, 98), rgb(157, 34, 60));
+    background-image: -o-linear-gradient(135deg, rgb(14, 51, 98), rgb(157, 34, 60));
+    background-image: linear-gradient(135deg, rgb(14, 51, 98), rgb(157, 34, 60));
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    cursor: pointer;
+}
+.vertical-sub > ul > li > label + input {
+    display: none;
+} 
+.vertical-inner {
+    display: none;
+}
+.vertical-inner > ul {
+    list-style-type: none;
+}
+.vertical-inner > ul > li{
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    background-color: #F2F2F2;
+    color: #333331;
+    padding: 5px 0;
+    font-size: 0.75rem;
+    text-align: left;
+    transition: all .35s ease;
+}
+.vertical-inner > ul > li:hover{
+    color: #7F223C;
+}
+.vertical-inner > ul > li > a {
+    margin-left: 25px;
+    text-decoration: none;
+    display: inherit;
+    color: inherit;
+}
+
+   
+            
+        

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="member.noticeMapper">
+	<select id="selectNewTechBoardList" parameterType="Map" resultType="NewTechBoardVO">
+		SELECT article_num, subject, writer, DATE_FORMAT(write_date, '%Y.%c.%e') write_date, hit
+		FROM newtech_board
+		<choose>
+			<when test="terms == 'article_num'">
+				WHERE article_num LIKE #{value}
+			</when>
+			<when test="terms == 'subject'">
+				WHERE subject LIKE #{value}
+			</when>
+			<when test="terms == 'content'">
+				WHERE content LIKE #{value}
+			</when>
+			<when test="terms == 'writer'">
+				WHERE writer LIKE #{value}
+			</when>
+			<otherwise></otherwise>
+		</choose>
+		ORDER BY article_num DESC
+		LIMIT ${begin}, ${numPerPage}
+	</select>
+	
+	<select id="selectNewTechBoardOne" parameterType="int" resultType="NewTechBoardVO">
+		SELECT article_num, subject, writer, content, DATE_FORMAT(write_date, '%Y.%c.%e') write_date, hit
+		FROM newtech_board
+		WHERE article_num = #{article_num}
+	</select>
+	
+	<select id="totalRecord" parameterType="Map" resultType="int">
+		SELECT COUNT(*) TOTALRECORD
+		FROM newtech_board
+		<choose>
+			<when test="terms == 'article_num'">
+				WHERE article_num LIKE #{value}
+			</when>
+			<when test="terms == 'subject'">
+				WHERE subject LIKE #{value}
+			</when>
+			<when test="terms == 'content'">
+				WHERE content LIKE #{value}
+			</when>
+			<when test="terms == 'writer'">
+				WHERE writer LIKE #{value}
+			</when>
+			<otherwise></otherwise>
+		</choose>
+  	</select>
+  	
+  	
+  	<select id="selectListMain" resultType="NewTechBoardVO">
+		SELECT article_num, subject
+		FROM newtech_board
+		ORDER BY write_date ASC
+		LIMIT 0, 8;
+	</select>
+
+</mapper>
