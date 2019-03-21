@@ -19,7 +19,7 @@
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
 		<property name="url" value="jdbc:log4jdbc:mysql://127.0.0.1:3306/bitcamp_local?useSSL=false&amp;serverTimezone=UTC&amp;useUnicode=yes&amp;characterEncoding=UTF-8" />
 		<property name="username" value="root" />
-		<property name="password" value="rootpw" />
+		<property name="password" value="root" />
 	</bean>
 	
 	<!--SqlSessionFactory 설정 : dataSource를 참조, mybatis-config.xml 경로설정-->
